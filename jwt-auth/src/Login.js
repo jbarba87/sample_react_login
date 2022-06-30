@@ -23,7 +23,6 @@ const Login = ({setLogoutUser}) => {
   let history = useNavigate();
 
   const login = (e) => {
-    console.log("aqui")
     e.preventDefault();
     axiox.post("http://localhost:5000/api/auth/login", {
       email, 
@@ -43,7 +42,6 @@ const Login = ({setLogoutUser}) => {
       setLogoutUser(false)
       history("/")
      }).catch((error) => setError(error.response.data.message));
-// }).catch((error) => console.log(error));
 
   }
 
